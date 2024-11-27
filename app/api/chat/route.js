@@ -38,8 +38,17 @@ export async function POST(req) {
       } finally {
         controller.close(); // Close the stream when done
       }
-    },
+    }
   });
 
-  return new NextResponse(stream); // Return the stream as the response
+  return new NextResponse(stream);
+}
+
+// Ensure the default export is set up correctly
+export default function handler(req, res) {
+  if (req.method === 'POST') {
+    return POST(req, res);
+  } else {
+    res.status(405).json({ message: 'Method Not Allowed' });
+  }
 }
