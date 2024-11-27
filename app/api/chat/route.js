@@ -43,12 +43,3 @@ export async function POST(req) {
 
   return NextResponse.json({ message: 'Success' });
 }
-
-// Ensure the default export is set up correctly
-export default function handler(req, res) {
-  if (req.method === 'POST') {
-    return POST(req, res);
-  } else {
-    res.status(405).json({ message: 'Method Not Allowed' });
-  }
-}
