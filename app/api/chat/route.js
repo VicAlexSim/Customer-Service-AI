@@ -41,7 +41,7 @@ export async function POST(req) {
     }
   });
 
-  return new NextResponse(stream);
+  return NextResponse.json({ message: 'Success' });
 }
 
 // Ensure the default export is set up correctly
