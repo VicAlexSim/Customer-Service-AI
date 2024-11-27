@@ -8,7 +8,7 @@ const systemPrompt = `Welcome to Shopping List Extension Support! I am here to a
 export async function POST(req) {
   const openai = new OpenAI({
     baseURL: "https://openrouter.ai/api/v1",
-    apiKey: `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`,
+    apiKey: `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`,
   }); // Create a new instance of the OpenAI client
 
   const data = await req.json(); // Parse the JSON body of the incoming request
